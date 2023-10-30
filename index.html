@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Government of Plateau State</title>
+    <style>
+        * {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            font-size: 11px;
+        }
+
+        nav {
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            max-height: 40px;
+            overflow: hidden;
+            justify-content: space-between;
+            align-items: center;
+            background-color: transparent;
+            /* border-bottom: 1px solid silver; */
+            color: white;
+            background-color: forestgreen;
+        }
+
+        .nav-link {
+            display: flex;
+            /* flex: 2; */
+        }
+
+        nav input {
+            background-color: transparent;
+            border: 1px solid silver;
+            border-radius: 4px;
+            padding: 4px;
+        }
+
+        h1 {
+            /* flex: 2; */
+        }
+
+        nav button {
+            background-color: transparent;
+            border: none;
+        }
+
+        .nav-link li {
+            list-style: none;
+            margin: 12px;
+        }
+
+        .search-form {
+            /* flex: 2; */
+        }
+
+        @media (max-width: 475px) {
+            .nav-link {
+                display: none;
+            }
+
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            min-height: 500px;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid red; */
+            padding: 12px;
+        }
+
+        .form-container {
+            display: flex;
+            flex-wrap: wrap;
+            overflow: hidden;
+            background-color: white;
+            /* min-height: 120px; */
+            /* padding: 15px; */
+            border-radius: 23px 0 23px 0;
+            border: 1px solid silver;
+            margin-top: 3.4rem;
+            box-shadow: 0 0 40px 15px rgba(150, 150, 150, 0.446);
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            transition: 500ms ease-in-out;
+            padding: 1rem;
+            border: 1px solid white;
+            background-color: transparent;
+            border-radius: 5px;
+            width: 100%;
+            box-shadow: 0 0 8px 1px transparent;
+            color: rgb(231, 231, 231);
+        }
+
+        input::placeholder {
+            color: gray;
+        }
+
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            box-shadow: none;
+            appearance: none;
+        }
+
+        .state-logo {
+            flex: 2;
+            padding: 12px;
+            border-right: 1px solid silver;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-form,
+        .main-form form {
+            /* background-color: blue; */
+            color: gray;
+            background-color: rgb(56, 56, 56);
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            flex: 8;
+        }
+
+        label {
+            padding: 4px;
+            display: inline-block;
+            font-weight: bold;
+            margin: 0 0 -12px 12px;
+            background-color: rgb(56, 56, 56);
+            color: white;
+            z-index: 3;
+        }
+
+        .form-input-row {
+            display: flex;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+        }
+
+        .login-button {
+            width: 100%;
+            background-color: forestgreen;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        button,
+        input[type="submit"] {
+            transition: 200ms ease-in;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover,
+        input[type="submit"]:hover {
+            background-color: rgb(0, 0, 0);
+            color: white;
+        }
+
+        .left-nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px;
+            flex:5;
+        }
+
+        .right-nav {
+            display: flex;
+            justify-content: center;
+            background-color: white;
+            color: black;
+            padding: 2px;
+            border-radius: 36px 0 0 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <span class="left-nav">
+            <!-- Logo in navbar -->
+            <h1>Logo</h1>
+
+            <!-- Search Form Area -->
+            <div class="search-form">
+                <form action="">
+                    <input type="text" name="search-parameter">
+
+                    <button>Search me</button>
+                </form>
+            </div>
+        </span>
+        <span class="right-nav">
+            <!-- Navbar Links -->
+            <ul class="nav-link">
+                <li>Login</li>
+                <li>Register</li>
+                <li>Homepage</li>
+            </ul>
+        </span>
+    </nav>
+    <!-- Nav Bar Ends Here -->
+
+    <main>
+        <!-- This is the form container sitting at the center of the screen -->
+        <div class="form-container">
+            <div class="state-logo">
+                <img src="./images/state-logo.jpg" alt="">
+            </div>
+            <div class="main-form">
+                <form action="http://127.0.0.1:5000/login-data" method="POST" autocomplete="off">
+                    <h2>Login</h2>
+                    <div class="form-input-row">
+                        <label for="userEmail">User ID </label>
+                        <input type="email" name="user_email" id="userEmail" placeholder="Ex. PLSG-0000"
+                            autocomplete="off">
+                    </div>
+
+                    <div class="form-input-row">
+                        <label for="">Password </label>
+                        <input type="password" name="pwd" id="pass" placeholder="Ex. Abc#]32NmD" required
+                            autocomplete="off">
+                    </div>
+
+                    <div class="form-input-row">
+                        <input class="login-button" type="submit" value="Login">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
